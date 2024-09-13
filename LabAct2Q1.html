@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Question 1</title>
+
+        <script>
+            function reverseNameGetAge() {
+                //Takes the input from the user, removes any white spaces
+                var nameInput = document.getElementById("nameInput").value.trim();
+                var birthYearInput = document.getElementById("birthInput").value;
+                var currentYear = new Date().getFullYear();
+
+                // Validate inputs
+                if (nameInput === "" || birthYearInput === "" || birthYearInput < 1900 || birthYearInput > currentYear) {
+                    alert("Please enter a valid name and birth year.");
+                    return;
+                }
+                
+                // Removes multiple spaces in the name
+                nameInput = nameInput.replace(/\s+/g, ' ');
+
+                // Removes non-alphabetic characters
+                nameInput = nameInput.replace(/[^a-zA-Z\s]/g, '');
+
+                // Splits the name into an array of characters, reverses the array and joins it back into a string
+                var Rname = nameInput.split("").reverse().join("");
+                var age = currentYear - birthYearInput;
+
+                var resultText = `Your name is ${nameInput} and its reversed version is ${Rname}. Your age is ${age} years old.`;
+                document.getElementById("result").textContent = resultText;
+
+                //Shows the result paragraph (hidden by default)
+                document.getElementById("resultParagraph").style.display = "block";
+            }
+        </script>
+    </head>
+    <body>
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput">
+
+        <br>
+
+        <label for="birthInput">Birth Year:</label>
+        <input type="number" id="birthInput" min="1900" max="2024">
+
+        <br>
+
+        <button onclick="reverseNameGetAge()">Get Result</button>
+
+        <p id="resultParagraph" style="display: none;">Result: <br><span id="result"></span></p>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Question 4</title>
+
+    <script>
+        function generateTableAndFactorials() {
+            var n = parseInt(document.getElementById("numberInput").value);
+
+            // Generate multiplication table
+            var table = "";
+            for (var i = 1; i <= n; i++) {
+                var row = "";
+                for (var j = 1; j <= n; j++) {
+                    row += (i * j) + " ";
+                }
+                table += row.trim() + "<br>";
+            }
+
+            // Calculate and display factorials
+            var factorials = "";
+            for (var k = 1; k <= n; k++) {
+                var factorial = 1;
+                for (var m = 1; m <= k; m++) {
+                    factorial *= m;
+                }
+                factorials += k + "! = " + factorial + "<br>";
+            }
+
+            // Display the results
+            document.getElementById("result").innerHTML = "Result:<br><br>Multiplication Table:<br>" + table + "<br>Factorials:<br>" + factorials;
+        }
+    </script>
+</head>
+<body>
+    
+    <label for="numberInput">Enter the number you want to generate: </label>
+    <input type="number" id="numberInput">
+    <br>
+    <button onclick="generateTableAndFactorials()">Generate</button>
+    <br> <br>
+    <div id="result"></div>
+</body>
+</html>

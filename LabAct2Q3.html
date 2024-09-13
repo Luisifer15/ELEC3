@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Question 3</title>
+
+    <script>
+        function checkNumber() {
+            var input = prompt("Enter the number you want to check:");
+            var number = parseInt(input);
+
+            if (isNaN(number)) {
+                document.getElementById("result").innerHTML = "Jollibee";
+            } else if (number % 2 === 0) {
+                document.getElementById("result").innerHTML = number + " -> Jolly";
+            } else {
+                document.getElementById("result").innerHTML = number + " -> Bee";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="checkNumber()">Check Number</button>
+    <p id="result"></p>
+</body>
+</html>

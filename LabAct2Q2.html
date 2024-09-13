@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Question 2</title>
+
+    <script>
+        function checkPalindrome() {
+            var word = prompt("Enter the word you want to check:");
+            var reversedWord = word.split('').reverse().join('');
+            
+            if (word === reversedWord) {
+                alert("The word '" + word + "' is a palindrome!");
+            } else {
+                alert("The word you've entered is not a palindrome!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="checkPalindrome()">Palindrome prompt</button>
+</body>
+</html>
